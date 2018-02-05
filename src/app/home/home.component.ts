@@ -37,12 +37,15 @@ export class HomeComponent implements OnInit {
   btnText:string ='Add an item';
   goalText:string='My first life goal';
   goals = [];
+  employees=[];
 
 
   constructor(private _data:DataService) { }
 
   ngOnInit() {
     this._data.goal.subscribe(res=>this.goals=res);
+     this._data.getEmployee();
+    this._data.employee.subscribe(res=>this.employees=res);
     this.itemCount=this.goals.length;
     this._data.changeGoal(this.goals);
   }

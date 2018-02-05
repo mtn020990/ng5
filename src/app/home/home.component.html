@@ -19,4 +19,15 @@
         {{goal}}
       </p>
   </div>
+
+  <div class="col">
+    <div class="life-container" *ngFor="let emp of employees">
+        <p>
+          Name:  {{emp.Name}}
+        </p>
+        <p>
+            Address:  {{emp.Address}}
+          </p>
+    </div>     
+  </div>
 </div>
