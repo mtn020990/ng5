@@ -65,4 +65,9 @@ export class HomeComponent implements OnInit {
     this._data.changeGoal(this.goals);
   }
 
+  deleteEmployee(id)
+  {
+    this._data.deleteEmployee(id).subscribe(res=>this.employees=res);
+  }
+
 }

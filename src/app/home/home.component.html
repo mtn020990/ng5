@@ -21,8 +21,8 @@
   </div>
 
   <div class="col">
-    <div class="life-container" *ngFor="let emp of employees">
-        <p>
+    <div class="life-container" *ngFor="let emp of employees" (click)="deleteEmployee(emp.Id)" >
+        <p >
           Name:  {{emp.Name}}
         </p>
         <p>

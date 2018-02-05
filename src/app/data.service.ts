@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { catchError, retry } from 'rxjs/operators';
 import { debug } from 'util';
 
 const httpOptions = {
@@ -23,9 +25,18 @@ export class DataService {
   private employees= new BehaviorSubject<any>([]);
   employee=this.employees.asObservable();
 
+
   getEmployee()
   {
     this.employee=this.http.get("http://localhost:53035/api/Angular/GetAllEmployee");
+    return this.employee;
+  }
+
+  deleteEmployee(id):Observable<any>
+  {
+    let body = JSON.stringify(id);
+    this.http.post('http://localhost:53035/api/Angular/DeleteEmpoyee',
+    body,httpOptions).subscribe(res=>this.employee=res);
     return this.employee;
   }
 
