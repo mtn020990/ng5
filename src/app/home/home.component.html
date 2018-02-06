@@ -6,7 +6,7 @@
       <p>Your bucket list ({{itemCount}})</p>
   </div>
 </div>
-<div class="container color-light" [@goals]="goals.length">
+<div class="container color-light" [@goals]="goals.length" [@employees]="employees.length">
   <div class="col">
       <p class="sm">Use this form below to add a new bucket list.</p>
       <form>
@@ -21,13 +21,16 @@
   </div>
 
   <div class="col">
-    <div class="life-container" *ngFor="let emp of employees" (click)="deleteEmployee(emp.Id)" >
-        <p >
+      <p class="life-container" *ngFor="let emp of employees"  >
+        <span>
           Name:  {{emp.Name}}
-        </p>
-        <p>
+        </span> <br>
+        <span>
             Address:  {{emp.Address}}
-          </p>
-    </div>     
+        </span> <br>
+        <span>
+            <input type="button" value="Delete" (click)="deleteEmployee(emp.Id)">
+        </span>
+      </p>     
   </div>
 </div>
