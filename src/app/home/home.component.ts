@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { DataService } from '../data.service';
+import { Observable } from 'rxjs/Observable';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
+import { error } from 'util';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +32,8 @@ import { DataService } from '../data.service';
             style({opacity: 0, transform: 'translateY(-75%)',     offset: 1.0}),
           ]))]), {optional: true})
       ])
-    ]),
+     ])
+    ,
     trigger('employees', [
       transition('* => *', [
 
@@ -66,7 +72,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this._data.goal.subscribe(res=>this.goals=res);
     this._data.getEmployee();
-    this._data.employee.subscribe(res=>this.employees=res);
+    this._data.employee.subscribe(res=>this.employees=res,
+          error=>{console.log(error.message)});
     this.itemCount=this.goals.length;
     this._data.changeGoal(this.goals);
   }
@@ -88,7 +95,8 @@ export class HomeComponent implements OnInit {
 
   deleteEmployee(id)
   {
-    this._data.deleteEmployee(id).subscribe(res=>this.employees=res);
+    this._data.deleteEmployee(id).subscribe(res=>this.employees=res,
+          error=>{console.log(error.message)});
   }
 
 }
