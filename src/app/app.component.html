@@ -1,22 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<!-- 
-<ul>
-  <li><a routerLink="">Home</a></li>
-   <li><a routerLink="about/52">About</a></li>
-</ul>-->
-
-
-<div class="container">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><i class="fa fa-home"></i> Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Features</a>
@@ -25,11 +17,78 @@
           <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" routerLink="about/52">About</a>
         </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </nav>
-<router-outlet></router-outlet> 
+
+
+<div class="container">
+  <router-outlet></router-outlet> 
+</div>
+
+
+ <div class="clear"></div>
+<div class="footer_wrapper">
+  <div class="container">
+     <div class="footer">
+        <div class="row">
+          <div class="col-sm-4 smalldiv">
+            <p class="header"><b>Designed in VietNam</b></p>
+            <p>Timely is meticulously designed by vikings from Oslo, Norway.</p>
+            <p><a href="#">Learn more about us</a></p>
+          </div>
+          <div class="col-sm-8">
+            <div class="row">
+               <div class="col-sm-4">
+                  <ul>
+                    <li class="header">SOLUTIONS</li>
+                    <li><a href="#">Automatic Timesheets</a></li>
+                    <li><a href="#">Team Management</a></li>
+                    <li><a href="#">Download Our Apps</a></li>
+                    <li><a href="#">Pricing</a></li>
+                  </ul>
+               </div> 
+               <div class="col-sm-4">
+                  <ul>
+                      <li class="header">COMPANY</li>
+                      <li><a href="#">Jobs</a></li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Press Kit</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Product Updates</a></li>
+                  </ul>
+                </div> 
+                <div class="col-sm-4">
+                    <ul>
+                        <li class="header">LEARN</li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Product Updates</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div> 
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright text-center">
+                <p>Copyright 
+                    {{year}}
+                  . All rights reserved. <a href="#">Terms of Service.</a>
+                </p>
+            </div>
+          </div>
+        </div>
+     </div> 
+  </div>
 </div>
 

@@ -1,0 +1,44 @@
+
+.footer_wrapper{
+    background: #FAFCFD;
+    -moz-box-shadow: rgba(0,0,0,0.03) 0px 4px 40px inset;
+    -webkit-box-shadow: rgba(0,0,0,0.03) 0px 4px 40px inset;
+    box-shadow: rgba(0,0,0,0.03) 0px 4px 40px inset;
+}
+
+.smalldiv p {
+    max-width: 250px;
+}
+
+.footer
+{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.footer a
+{
+    color: #868e96;
+    line-height: 2em;
+}
+
+.footer ul
+{
+    list-style: none;
+}
+
+.footer ul li.header {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.footer p.header {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.copyright
+{
+    border-top: 2px solid rgba(0,0,0,0.03);
+    padding-top: 20px;
+}

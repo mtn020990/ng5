@@ -22,22 +22,22 @@ export class DataService {
     this.goals.next(goal);
   }
 
-  private employees=new BehaviorSubject<any>([]);
-  public employee =this.employees.asObservable();
+  public data:any;
 
 
-  getEmployee()
+  getEmployee(pageIndex:number, pageSize:number)
   {
-    this.employee= this.http.get("http://localhost:53035/api/Angular/GetAllEmployee");
-    return this.employee;
+    let body=JSON.stringify({"PageIndex":pageIndex,"PageSize":pageSize});
+    this.data=this.http.post("http://localhost:53035/api/Angular/GetAllEmployee" ,body,httpOptions);
+    return this.data;
   }
 
-  deleteEmployee(id)
+  deleteEmployee(pageIndex:number, pageSize:number,id:any)
   {
-    let body = JSON.stringify(id);
-    this.employee=this.http.post('http://localhost:53035/api/Angular/DeleteEmpoyee',
+    let body=JSON.stringify({"PageIndex":pageIndex,"PageSize":pageSize,"Id":id});
+    this.data=this.http.post('http://localhost:53035/api/Angular/DeleteEmpoyee',
     body,httpOptions);
-    return this.employee;
+    return this.data;
   }
 
 }

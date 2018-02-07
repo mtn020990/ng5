@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ModalModule  } from 'ngx-bootstrap';
-
+import { NgbModule  } from '@ng-bootstrap/ng-bootstrap';
+import { BlockUIModule } from 'ng-block-ui';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
@@ -28,7 +28,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ModalModule.forRoot() 
+    NgbModule.forRoot(),
+    BlockUIModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
